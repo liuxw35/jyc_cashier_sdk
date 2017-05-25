@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  
+  <title>Document</title>
+ </head>
+ <script type="text/javascript">
+
+	function displaymessage(){
+      var money = document.getElementById("money").value;
+      var payType = document.getElementById("payType");
+      var index=payType.selectedIndex ;
+      var val = payType.options[index].value;
+	  <!--JSBridge.callCashier("业务参数json串","支付类型(支付宝：alipay;微信：wechatpay)");-->
+	  JSBridge.callCashier("业务参数json串","支付类型(支付宝：alipay;微信：wechatpay)");
+	}
+	function show(info){
+        document.getElementById("shows").innerHTML = info;
+    }
+</script>
+ <body>
+ <input id="money" value="188"/>
+ <select id="payType">
+  <option value="1">微信</option>
+  <option value="2">支付宝</option>
+ </select>
+  <!--<input type="button" value="确定!" onclick="displaymessage()" />-->
+ <button onclick="displaymessage()">确定</button>
+ </body>
+</html>
